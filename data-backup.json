@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 17 Pro Max",
+      "price": 39990000,
+      "screen": "6.9 inch Super Retina XDR ProMotion",
+      "blackCamera": "48MP Fusion + 12MP Ultra Wide + 12MP Telephoto",
+      "frontCamera": "12MP TrueDepth",
+      "img": "asset/img/phones/iphone-17-pro.png",
+      "desc": "Chip A19 Pro, khung titan, Action Button, Camera Control, USB-C",
+      "type": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "iPhone 17 Pro",
+      "price": 34990000,
+      "screen": "6.3 inch Super Retina XDR ProMotion",
+      "blackCamera": "48MP Fusion + 12MP Ultra Wide + 12MP Telephoto",
+      "frontCamera": "12MP TrueDepth",
+      "img": "asset/img/phones/iphone-17-pro.png",
+      "desc": "Chip A19 Pro, khung titan, Action Button, Camera Control",
+      "type": "Apple"
+    },
+    {
+      "id": 3,
+      "name": "iPhone 17",
+      "price": 27990000,
+      "screen": "6.1 inch Super Retina XDR",
+      "blackCamera": "48MP Fusion + 12MP Ultra Wide",
+      "frontCamera": "12MP TrueDepth",
+      "img": "asset/img/phones/iphone-17.png",
+      "desc": "Chip A19, Camera Control, than nhom, USB-C",
+      "type": "Apple"
+    },
+    {
+      "id": 4,
+      "name": "iPhone Air",
+      "price": 32990000,
+      "screen": "6.6 inch Super Retina XDR ProMotion",
+      "blackCamera": "48MP Fusion + 12MP Ultra Wide",
+      "frontCamera": "12MP TrueDepth",
+      "img": "asset/img/phones/iphone-air.png",
+      "desc": "Sieu mong 5.5mm, Chip A18, than nhom, USB-C",
+      "type": "Apple"
+    },
+    {
+      "id": 5,
+      "name": "iPhone 17e",
+      "price": 21990000,
+      "screen": "6.1 inch Super Retina XDR",
+      "blackCamera": "48MP Fusion",
+      "frontCamera": "12MP TrueDepth",
+      "img": "asset/img/phones/iphone-17e.png",
+      "desc": "Chip A18, gia tot nhat, ho tro Apple Intelligence",
+      "type": "Apple"
+    },
+    {
+      "id": 6,
+      "name": "Samsung Galaxy S25 Ultra",
+      "price": 33990000,
+      "screen": "6.9 inch Dynamic AMOLED 2X",
+      "blackCamera": "200MP + 10MP + 50MP + 12MP",
+      "frontCamera": "12MP",
+      "img": "asset/img/phones/samsung-s25-ultra.jpg",
+      "desc": "Snapdragon 8 Elite, Galaxy AI, but S Pen, sac 45W",
+      "type": "Samsung"
+    },
+    {
+      "id": 7,
+      "name": "Samsung Galaxy S25+",
+      "price": 28990000,
+      "screen": "6.7 inch Dynamic AMOLED 2X",
+      "blackCamera": "50MP + 10MP + 12MP",
+      "frontCamera": "12MP",
+      "img": "asset/img/phones/samsung-s25-plus.jpg",
+      "desc": "Snapdragon 8 Elite, Galaxy AI, sac 45W",
+      "type": "Samsung"
+    },
+    {
+      "id": 8,
+      "name": "OPPO Find X8",
+      "price": 26990000,
+      "screen": "6.59 inch LTPO AMOLED",
+      "blackCamera": "50MP + 50MP + 50MP",
+      "frontCamera": "32MP",
+      "img": "asset/img/phones/oppo-find-x8-pro.png",
+      "desc": "Dimensity 9400, camera Hasselblad, sac 80W SuperVOOC",
+      "type": "OPPO"
+    },
+    {
+      "id": 9,
+      "name": "Xiaomi 15 Ultra",
+      "price": 26990000,
+      "screen": "6.73 inch LTPO AMOLED",
+      "blackCamera": "50MP + 200MP + 50MP",
+      "frontCamera": "32MP",
+      "img": "asset/img/phones/xiaomi-15-ultra.png",
+      "desc": "Snapdragon 8 Elite, camera Leica, sac 90W HyperCharge",
+      "type": "Xiaomi"
+    }
+  ]
+}

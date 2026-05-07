@@ -1,0 +1,26 @@
+// Sass 7-1 Pattern
+// https://sass-guidelin.es/#the-7-1-pattern
+
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Vendors
+// @import 'vendors/...';
+
+// 3. Base
+@import 'base/reset';
+@import 'base/typography';
+
+// 4. Layout
+@import 'layout/header';
+@import 'layout/footer';
+
+// 5. Components
+// @import 'components/...';
+
+// 6. Pages
+// @import 'pages/...';
+
+// 7. Themes
+// @import 'themes/...';

@@ -1,0 +1,10 @@
+.header {
+  background-color: $dark-color;
+  color: $light-color;
+  padding: 1rem 2rem;
+
+  nav {
+    @include flex-center;
+    justify-content: space-between;
+  }
+}
