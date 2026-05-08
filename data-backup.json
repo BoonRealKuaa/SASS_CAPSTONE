@@ -9,7 +9,14 @@
       "frontCamera": "12MP TrueDepth",
       "img": "asset/img/phones/iphone-17-pro.png",
       "desc": "Chip A19 Pro, khung titan, Action Button, Camera Control, USB-C",
-      "type": "Apple"
+      "type": "Apple",
+      "videoId": "_-AS5DtDeqs",
+      "chip": "Apple A19 Pro",
+      "battery": "4685 mAh",
+      "os": "iOS 18",
+      "storage": "256GB / 512GB / 1TB",
+      "weight": "227g",
+      "features": ["Action Button", "Camera Control", "USB-C 3", "MagSafe", "Apple Intelligence", "Khung Titan cấp hàng không vũ trụ"]
     },
     {
       "id": 2,
@@ -20,7 +27,14 @@
       "frontCamera": "12MP TrueDepth",
       "img": "asset/img/phones/iphone-17-pro.png",
       "desc": "Chip A19 Pro, khung titan, Action Button, Camera Control",
-      "type": "Apple"
+      "type": "Apple",
+      "videoId": "_-AS5DtDeqs",
+      "chip": "Apple A19 Pro",
+      "battery": "3274 mAh",
+      "os": "iOS 18",
+      "storage": "128GB / 256GB / 512GB / 1TB",
+      "weight": "199g",
+      "features": ["Action Button", "Camera Control", "USB-C 3", "MagSafe", "Apple Intelligence", "Khung Titan cấp hàng không vũ trụ"]
     },
     {
       "id": 3,
@@ -30,8 +44,15 @@
       "blackCamera": "48MP Fusion + 12MP Ultra Wide",
       "frontCamera": "12MP TrueDepth",
       "img": "asset/img/phones/iphone-17.png",
-      "desc": "Chip A19, Camera Control, than nhom, USB-C",
-      "type": "Apple"
+      "desc": "Chip A19, Camera Control, thân nhôm, USB-C",
+      "type": "Apple",
+      "videoId": "PBrYMBacnyM",
+      "chip": "Apple A19",
+      "battery": "3279 mAh",
+      "os": "iOS 18",
+      "storage": "128GB / 256GB / 512GB",
+      "weight": "170g",
+      "features": ["Camera Control", "USB-C", "MagSafe", "Apple Intelligence", "Kính chống trầy 3x", "Thân nhôm cao cấp"]
     },
     {
       "id": 4,
@@ -41,8 +62,15 @@
       "blackCamera": "48MP Fusion + 12MP Ultra Wide",
       "frontCamera": "12MP TrueDepth",
       "img": "asset/img/phones/iphone-air.png",
-      "desc": "Sieu mong 5.5mm, Chip A18, than nhom, USB-C",
-      "type": "Apple"
+      "desc": "Siêu mỏng 5.5mm, Chip A18, thân nhôm, USB-C",
+      "type": "Apple",
+      "videoId": "M0au92yebLQ",
+      "chip": "Apple A18",
+      "battery": "2800 mAh",
+      "os": "iOS 18",
+      "storage": "128GB / 256GB / 512GB",
+      "weight": "145g",
+      "features": ["Siêu mỏng 5.5mm", "Camera Control", "USB-C", "MagSafe", "Apple Intelligence", "Mỏng nhất trong lịch sử iPhone"]
     },
     {
       "id": 5,
@@ -52,8 +80,15 @@
       "blackCamera": "48MP Fusion",
       "frontCamera": "12MP TrueDepth",
       "img": "asset/img/phones/iphone-17e.png",
-      "desc": "Chip A18, gia tot nhat, ho tro Apple Intelligence",
-      "type": "Apple"
+      "desc": "Chip A18, giá tốt nhất, hỗ trợ Apple Intelligence",
+      "type": "Apple",
+      "videoId": "TiE2F1V841A",
+      "chip": "Apple A18",
+      "battery": "3279 mAh",
+      "os": "iOS 18",
+      "storage": "128GB / 256GB",
+      "weight": "167g",
+      "features": ["Apple Intelligence", "USB-C", "MagSafe", "Face ID", "Camera Control", "Giá phải chăng nhất trong dòng iPhone 17"]
     },
     {
       "id": 6,
@@ -63,8 +98,15 @@
       "blackCamera": "200MP + 10MP + 50MP + 12MP",
       "frontCamera": "12MP",
       "img": "asset/img/phones/samsung-s25-ultra.jpg",
-      "desc": "Snapdragon 8 Elite, Galaxy AI, but S Pen, sac 45W",
-      "type": "Samsung"
+      "desc": "Snapdragon 8 Elite, Galaxy AI, bút S Pen, sạc 45W",
+      "type": "Samsung",
+      "videoId": "3i1OB6wKYms",
+      "chip": "Snapdragon 8 Elite",
+      "battery": "5000 mAh",
+      "os": "Android 15 / One UI 7",
+      "storage": "256GB / 512GB / 1TB",
+      "weight": "218g",
+      "features": ["Bút S Pen tích hợp", "Galaxy AI", "Sạc không dây 15W", "IP68 chống nước", "Titanium Frame", "Camera 200MP Periscope"]
     },
     {
       "id": 7,
@@ -74,8 +116,15 @@
       "blackCamera": "50MP + 10MP + 12MP",
       "frontCamera": "12MP",
       "img": "asset/img/phones/samsung-s25-plus.jpg",
-      "desc": "Snapdragon 8 Elite, Galaxy AI, sac 45W",
-      "type": "Samsung"
+      "desc": "Snapdragon 8 Elite, Galaxy AI, sạc 45W",
+      "type": "Samsung",
+      "videoId": "3i1OB6wKYms",
+      "chip": "Snapdragon 8 Elite",
+      "battery": "4900 mAh",
+      "os": "Android 15 / One UI 7",
+      "storage": "256GB / 512GB",
+      "weight": "190g",
+      "features": ["Galaxy AI", "Sạc nhanh 45W", "Sạc không dây 15W", "IP68 chống nước", "Snapdragon 8 Elite", "Now Brief & Now Bar"]
     },
     {
       "id": 8,
@@ -85,8 +134,15 @@
       "blackCamera": "50MP + 50MP + 50MP",
       "frontCamera": "32MP",
       "img": "asset/img/phones/oppo-find-x8-pro.png",
-      "desc": "Dimensity 9400, camera Hasselblad, sac 80W SuperVOOC",
-      "type": "OPPO"
+      "desc": "Dimensity 9400, camera Hasselblad, sạc 80W SuperVOOC",
+      "type": "OPPO",
+      "videoId": "Q0keQzKzabw",
+      "chip": "MediaTek Dimensity 9400",
+      "battery": "5776 mAh",
+      "os": "Android 15 / ColorOS 15",
+      "storage": "256GB / 512GB",
+      "weight": "193g",
+      "features": ["Camera Hasselblad", "Sạc 80W SuperVOOC", "Sạc không dây 50W", "IP69 chống nước", "AI Telescope Zoom 6x", "Kính Ceramic Shield"]
     },
     {
       "id": 9,
@@ -96,8 +152,15 @@
       "blackCamera": "50MP + 200MP + 50MP",
       "frontCamera": "32MP",
       "img": "asset/img/phones/xiaomi-15-ultra.png",
-      "desc": "Snapdragon 8 Elite, camera Leica, sac 90W HyperCharge",
-      "type": "Xiaomi"
+      "desc": "Snapdragon 8 Elite, camera Leica, sạc 90W HyperCharge",
+      "type": "Xiaomi",
+      "videoId": "2UpA29HtMFc",
+      "chip": "Snapdragon 8 Elite",
+      "battery": "6000 mAh",
+      "os": "Android 15 / HyperOS 2",
+      "storage": "256GB / 512GB / 1TB",
+      "weight": "226g",
+      "features": ["Camera Leica Summilux", "Sạc 90W HyperCharge", "Sạc không dây 80W", "IP68 chống nước", "Ống kính periscope 200MP", "Titan Frame"]
     }
   ]
 }
