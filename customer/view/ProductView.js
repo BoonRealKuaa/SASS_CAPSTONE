@@ -2,12 +2,13 @@ const ProductView = (() => {
   function renderCard(product) {
     const basePath = window.BASE_PATH || "";
     const detailUrl = `${basePath}customer/view/product-detail.html?id=${product.id}`;
+    const imgSrc = basePath + product.img;
     return `
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card h-100">
           <a href="${detailUrl}" class="product-card-link" title="Xem chi tiết ${product.name}">
             <div class="product-card-img">
-              <img src="${product.img}" alt="${product.name}" loading="lazy">
+              <img src="${imgSrc}" alt="${product.name}" loading="lazy">
             </div>
             <div class="product-card-body">
               <span class="product-badge">${product.type}</span>

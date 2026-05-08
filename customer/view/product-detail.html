@@ -39,35 +39,35 @@
 
     <!-- Detail content -->
     <div id="detail-content" class="d-none">
-
-      <!-- Hero video section -->
-      <div class="detail-video-wrapper">
-        <iframe
-          id="detail-video"
-          src=""
-          title="Video giới thiệu sản phẩm"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="container py-5">
+      <div class="container py-4">
 
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="mb-4">
-          <ol class="breadcrumb" id="detail-breadcrumb">
+        <nav aria-label="breadcrumb" class="mb-3">
+          <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../../index.html">Trang chủ</a></li>
             <li class="breadcrumb-item active" id="breadcrumb-name">Chi tiết sản phẩm</li>
           </ol>
         </nav>
 
-        <div class="row g-5">
+        <div class="row g-4">
 
-          <!-- Left: Product image -->
-          <div class="col-lg-5 text-center">
-            <div class="detail-img-wrap">
+          <!-- Left: Product image + Video -->
+          <div class="col-lg-5">
+            <div class="detail-img-wrap mb-3">
               <img id="detail-img" src="" alt="" class="detail-img" />
+            </div>
+            <!-- Video embed (compact) -->
+            <div class="detail-video-box">
+              <div class="detail-video-ratio">
+                <iframe
+                  id="detail-video"
+                  src=""
+                  title="Video giới thiệu sản phẩm"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
           </div>
 
@@ -103,7 +103,7 @@
         </div>
 
         <!-- Full specs table -->
-        <div class="mt-5">
+        <div class="mt-5 mb-5">
           <h3 class="fw-bold mb-3"><i class="bi bi-list-columns me-2 text-danger"></i>Thông số kỹ thuật</h3>
           <table class="table table-bordered detail-specs-table" id="detail-specs-table"></table>
         </div>

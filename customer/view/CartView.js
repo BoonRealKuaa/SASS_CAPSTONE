@@ -20,11 +20,12 @@ const CartView = (() => {
     if (summaryEl) summaryEl.classList.toggle("d-none", isEmpty);
     if (isEmpty) return;
 
+    const basePath = window.BASE_PATH || "";
     container.innerHTML = mangGioHang
       .map(
         (item) => `
         <div class="cart-item d-flex align-items-center border-bottom py-3">
-          <img src="${item.img}" alt="${item.name}" style="width:80px;height:80px;object-fit:contain;" class="me-3">
+          <img src="${basePath + item.img}" alt="${item.name}" style="width:80px;height:80px;object-fit:contain;" class="me-3">
           <div class="flex-grow-1">
             <h6 class="mb-1">${item.name}</h6>
             <p class="text-danger mb-1">${formatPrice(item.price)}</p>

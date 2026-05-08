@@ -23,11 +23,12 @@ const CartOffcanvasView = (() => {
 
     if (isEmpty) return;
 
+    const basePath = window.BASE_PATH || "";
     listEl.innerHTML = mangGioHang
       .map(
         (item) => `
         <div class="oc-item">
-          <img src="${item.img}" alt="${item.name}">
+          <img src="${basePath + item.img}" alt="${item.name}">
           <div class="oc-item-info">
             <p class="oc-item-name">${item.name}</p>
             <p class="oc-item-price">${formatPrice(item.price)}</p>

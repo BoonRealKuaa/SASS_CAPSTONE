@@ -16,7 +16,8 @@ const ProductDetailView = (() => {
     document.getElementById("detail-content").classList.remove("d-none");
     document.getElementById("detail-video").src =
       `https://www.youtube.com/embed/${product.videoId}?autoplay=0&rel=0`;
-    document.getElementById("detail-img").src = product.img;
+    const basePath = window.BASE_PATH || "";
+    document.getElementById("detail-img").src = basePath + product.img;
     document.getElementById("detail-img").alt = product.name;
     document.getElementById("breadcrumb-name").textContent = product.name;
 

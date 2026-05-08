@@ -563,18 +563,25 @@ body {
 }
 
 /* ===== PRODUCT DETAIL PAGE ===== */
-.detail-video-wrapper {
-  width: 100%;
+.detail-video-box {
+  border-radius: 12px;
+  overflow: hidden;
   background: #000;
-  display: flex;
-  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-.detail-video-wrapper iframe {
+.detail-video-ratio {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.detail-video-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 960px;
-  height: 540px;
-  display: block;
+  height: 100%;
 }
 
 .detail-img-wrap {
@@ -688,10 +695,6 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .detail-video-wrapper iframe {
-    height: 240px;
-  }
-
   .detail-specs-grid {
     grid-template-columns: 1fr;
   }

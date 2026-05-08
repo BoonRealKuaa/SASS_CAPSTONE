@@ -1,7 +1,7 @@
 const ProductService = (() => {
   const STORAGE_KEY = "phone_shop_products";
   const VERSION_KEY = "phone_shop_data_version";
-  const DATA_VERSION = "2";
+  const DATA_VERSION = "3";
 
   function getAll() {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -28,12 +28,7 @@ const ProductService = (() => {
       const basePath = window.BASE_PATH || "";
       const res = await fetch(basePath + "data-backup.json");
       const data = await res.json();
-
-      const products = data.products.map((p) => ({
-        ...p,
-        img: basePath + p.img,
-      }));
-      saveAll(products);
+      saveAll(data.products);
     }
   }
 
