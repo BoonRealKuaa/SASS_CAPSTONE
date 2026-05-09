@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../../asset/css/admin.css" />
+  </head>
+  <body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <i class="bi bi-phone-fill"></i>
+        <span>Phone<strong>Shop</strong></span>
+        <span class="admin-badge">Admin</span>
+      </div>
+      <nav class="admin-nav">
+        <a href="#" class="admin-nav-item active">
+          <i class="bi bi-box-seam"></i> Sản phẩm
+        </a>
+        <a href="../../index.html" class="admin-nav-item" target="_blank">
+          <i class="bi bi-shop"></i> Xem trang bán
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <div class="admin-main">
+
+      <!-- Top bar -->
+      <header class="admin-topbar">
+        <h4 class="mb-0 fw-bold"><i class="bi bi-box-seam me-2 text-danger"></i>Quản lý sản phẩm</h4>
+        <button type="button" class="btn btn-danger" id="btn-open-add">
+          <i class="bi bi-plus-lg me-1"></i> Thêm sản phẩm
+        </button>
+      </header>
+
+      <!-- Stats -->
+      <div class="row g-3 mb-4" id="admin-stats"></div>
+
+      <!-- Search + Filter bar -->
+      <div class="d-flex gap-2 mb-3 flex-wrap">
+        <input type="search" class="form-control" id="admin-search" placeholder="Tìm tên sản phẩm..." style="max-width:280px;" />
+        <select class="form-select" id="admin-type-filter" style="max-width:160px;">
+          <option value="">Tất cả loại</option>
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="OPPO">OPPO</option>
+          <option value="Xiaomi">Xiaomi</option>
+        </select>
+        <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-reset-data" title="Tải lại dữ liệu gốc">
+          <i class="bi bi-arrow-counterclockwise"></i> Reset dữ liệu gốc
+        </button>
+      </div>
+
+      <!-- Product table -->
+      <div class="admin-table-wrap">
+        <table class="table table-hover admin-table mb-0">
+          <thead>
+            <tr>
+              <th style="width:60px">ID</th>
+              <th style="width:70px">Ảnh</th>
+              <th>Tên sản phẩm</th>
+              <th>Loại</th>
+              <th>Giá bán</th>
+              <th>Màn hình</th>
+              <th style="width:120px" class="text-center">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="admin-product-tbody"></tbody>
+        </table>
+        <div id="admin-empty" class="text-center py-5 d-none">
+          <i class="bi bi-box2-heart text-muted" style="font-size:3rem;"></i>
+          <p class="text-muted mt-2">Không có sản phẩm nào</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Add / Edit Product -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="productModalLabel">Thêm sản phẩm</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" title="Đóng"></button>
+          </div>
+          <div class="modal-body">
+            <form id="product-form" novalidate>
+              <input type="hidden" id="form-id" />
+
+              <div class="row g-3">
+                <!-- Tên sản phẩm -->
+                <div class="col-md-8">
+                  <label class="form-label fw-semibold">Tên sản phẩm <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="form-name" required placeholder="VD: iPhone 17 Pro Max" />
+                  <div class="invalid-feedback">Vui lòng nhập tên sản phẩm.</div>
+                </div>
+
+                <!-- Loại -->
+                <div class="col-md-4">
+                  <label class="form-label fw-semibold">Hãng <span class="text-danger">*</span></label>
+                  <select class="form-select" id="form-type" required>
+                    <option value="">-- Chọn hãng --</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="OPPO">OPPO</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                  </select>
+                  <div class="invalid-feedback">Vui lòng chọn hãng.</div>
+                </div>
+
+                <!-- Giá -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Giá bán (VNĐ) <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="form-price" required min="0" placeholder="VD: 39990000" />
+                  <div class="invalid-feedback">Vui lòng nhập giá hợp lệ.</div>
+                </div>
+
+                <!-- Chip -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Chip xử lý</label>
+                  <input type="text" class="form-control" id="form-chip" placeholder="VD: Apple A19 Pro" />
+                </div>
+
+                <!-- Màn hình -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Màn hình <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="form-screen" required placeholder="VD: 6.9 inch Super Retina XDR" />
+                  <div class="invalid-feedback">Vui lòng nhập thông số màn hình.</div>
+                </div>
+
+                <!-- Pin -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Dung lượng pin</label>
+                  <input type="text" class="form-control" id="form-battery" placeholder="VD: 4685 mAh" />
+                </div>
+
+                <!-- Camera sau -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Camera sau <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="form-blackCamera" required placeholder="VD: 48MP Fusion + 12MP Ultra Wide" />
+                  <div class="invalid-feedback">Vui lòng nhập camera sau.</div>
+                </div>
+
+                <!-- Camera trước -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Camera trước <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="form-frontCamera" required placeholder="VD: 12MP TrueDepth" />
+                  <div class="invalid-feedback">Vui lòng nhập camera trước.</div>
+                </div>
+
+                <!-- OS -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Hệ điều hành</label>
+                  <input type="text" class="form-control" id="form-os" placeholder="VD: iOS 18" />
+                </div>
+
+                <!-- Storage -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Bộ nhớ trong</label>
+                  <input type="text" class="form-control" id="form-storage" placeholder="VD: 256GB / 512GB / 1TB" />
+                </div>
+
+                <!-- Cân nặng -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Trọng lượng</label>
+                  <input type="text" class="form-control" id="form-weight" placeholder="VD: 227g" />
+                </div>
+
+                <!-- Video ID -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">YouTube Video ID</label>
+                  <input type="text" class="form-control" id="form-videoId" placeholder="VD: _-AS5DtDeqs" />
+                  <div class="form-text">ID nằm sau youtube.com/watch?v=</div>
+                </div>
+
+                <!-- Mô tả -->
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Mô tả ngắn <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="form-desc" required placeholder="VD: Chip A19 Pro, khung titan, Action Button..." />
+                  <div class="invalid-feedback">Vui lòng nhập mô tả.</div>
+                </div>
+
+                <!-- Tính năng nổi bật -->
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Tính năng nổi bật</label>
+                  <textarea class="form-control" id="form-features" rows="3" placeholder="Mỗi tính năng 1 dòng:&#10;Action Button&#10;Camera Control&#10;USB-C"></textarea>
+                  <div class="form-text">Mỗi tính năng viết 1 dòng.</div>
+                </div>
+
+                <!-- Ảnh sản phẩm -->
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Ảnh sản phẩm <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text text-muted small">asset/img/phones/</span>
+                    <input type="text" class="form-control" id="form-img" required placeholder="iphone-17-pro.png" />
+                  </div>
+                  <div class="invalid-feedback">Vui lòng nhập tên file ảnh.</div>
+                  <div class="mt-2" id="img-preview-wrap" style="display:none;">
+                    <img id="img-preview" src="" alt="Preview" class="admin-img-preview" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-danger" id="btn-save-product">
+              <i class="bi bi-floppy me-1"></i> Lưu sản phẩm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Confirm Delete -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold text-danger"><i class="bi bi-trash me-2"></i>Xóa sản phẩm</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" title="Đóng"></button>
+          </div>
+          <div class="modal-body text-center py-3">
+            <p class="mb-1">Bạn có chắc muốn xóa sản phẩm</p>
+            <strong id="delete-product-name" class="text-danger fs-5"></strong>
+            <p class="text-muted small mt-2">Hành động này không thể hoàn tác.</p>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-danger" id="btn-confirm-delete">
+              <i class="bi bi-trash me-1"></i> Xóa
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-message" class="toast-custom" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../customer/model/Product.js"></script>
+    <script src="../../customer/services/ProductService.js"></script>
+    <script src="AdminView.js"></script>
+    <script src="../controller/AdminController.js"></script>
+    <script>
+      window.BASE_PATH = "../../";
+      AdminController.init();
+    </script>
+  </body>
+</html>
