@@ -43,8 +43,8 @@
 
       <!-- Search + Filter bar -->
       <div class="d-flex gap-2 mb-3 flex-wrap">
-        <input type="search" class="form-control" id="admin-search" placeholder="Tìm tên sản phẩm..." style="max-width:280px;" />
-        <select class="form-select" id="admin-type-filter" style="max-width:160px;">
+        <input type="search" class="form-control admin-search-input" id="admin-search" placeholder="Tìm tên sản phẩm..." />
+        <select class="form-select admin-type-select" id="admin-type-filter" title="Lọc theo hãng" aria-label="Lọc theo hãng">
           <option value="">Tất cả loại</option>
           <option value="Apple">Apple</option>
           <option value="Samsung">Samsung</option>
@@ -61,19 +61,19 @@
         <table class="table table-hover admin-table mb-0">
           <thead>
             <tr>
-              <th style="width:60px">ID</th>
-              <th style="width:70px">Ảnh</th>
+              <th class="col-id">ID</th>
+              <th class="col-img">Ảnh</th>
               <th>Tên sản phẩm</th>
               <th>Loại</th>
               <th>Giá bán</th>
               <th>Màn hình</th>
-              <th style="width:120px" class="text-center">Thao tác</th>
+              <th class="col-actions text-center">Thao tác</th>
             </tr>
           </thead>
           <tbody id="admin-product-tbody"></tbody>
         </table>
         <div id="admin-empty" class="text-center py-5 d-none">
-          <i class="bi bi-box2-heart text-muted" style="font-size:3rem;"></i>
+          <i class="bi bi-box2-heart text-muted admin-empty-icon"></i>
           <p class="text-muted mt-2">Không có sản phẩm nào</p>
         </div>
       </div>
@@ -199,7 +199,7 @@
                     <input type="text" class="form-control" id="form-img" required placeholder="iphone-17-pro.png" />
                   </div>
                   <div class="invalid-feedback">Vui lòng nhập tên file ảnh.</div>
-                  <div class="mt-2" id="img-preview-wrap" style="display:none;">
+                  <div class="mt-2 d-none" id="img-preview-wrap">
                     <img id="img-preview" src="" alt="Preview" class="admin-img-preview" />
                   </div>
                 </div>
@@ -243,6 +243,7 @@
     <div id="toast-message" class="toast-custom" role="status" aria-live="polite"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../asset/js/animations.js"></script>
     <script src="../../customer/model/Product.js"></script>
     <script src="../../customer/services/ProductService.js"></script>
     <script src="AdminView.js"></script>

@@ -6,6 +6,72 @@
   --gray-light: #f5f5f5;
   --gray-border: #e0e0e0;
   --text-muted: #888;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes badgePop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.55); }
+  70%  { transform: scale(0.88); }
+  100% { transform: scale(1); }
+}
+@keyframes cartAdded {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(0.93); }
+  60%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Page entrance */
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+body.page-ready {
+  opacity: 1;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay helpers */
+.delay-1 { transition-delay: 80ms; }
+.delay-2 { transition-delay: 160ms; }
+.delay-3 { transition-delay: 240ms; }
+.delay-4 { transition-delay: 320ms; }
+.delay-5 { transition-delay: 400ms; }
+.delay-6 { transition-delay: 480ms; }
+.delay-7 { transition-delay: 560ms; }
+
+/* Cart badge pop */
+.badge-pop {
+  animation: badgePop 0.38s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Add-to-cart success flash */
+.btn-cart-added {
+  animation: cartAdded 0.65s var(--ease) both;
 }
 
 body {
@@ -156,11 +222,21 @@ body {
   border-radius: 8px;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.22s var(--ease), color 0.22s var(--ease), transform 0.15s var(--ease);
+  will-change: transform;
 }
 
 .cat-btn i {
   font-size: 1.3rem;
+  transition: transform 0.22s var(--ease);
+}
+
+.cat-btn:hover i {
+  transform: scale(1.15);
+}
+
+.cat-btn:active {
+  transform: scale(0.93);
 }
 
 .cat-btn:hover,
@@ -227,10 +303,22 @@ body {
   font-size: 0.82rem;
   font-weight: 500;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  will-change: transform;
+}
+
+.promo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
 .promo-card i {
   font-size: 1.4rem;
+  transition: transform 0.25s var(--ease);
+}
+
+.promo-card:hover i {
+  transform: scale(1.2) rotate(-5deg);
 }
 
 /* ===== SECTION HEADER ===== */
@@ -251,16 +339,17 @@ body {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease);
   cursor: pointer;
   border: 1px solid var(--gray-border);
   display: flex;
   flex-direction: column;
+  will-change: transform;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
 
 .product-card-img {
@@ -337,12 +426,17 @@ body {
   font-size: 0.82rem;
   font-weight: 600;
   width: 100%;
-  transition: background 0.2s;
+  transition: background 0.2s var(--ease), transform 0.15s var(--ease);
+  will-change: transform;
 }
 
 .btn-add-cart:hover {
   background: var(--red-dark);
   color: #fff;
+}
+
+.btn-add-cart:active {
+  transform: scale(0.95);
 }
 
 /* ===== TOAST ===== */
@@ -357,13 +451,16 @@ body {
   font-size: 0.88rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transform: translateY(10px);
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease);
   z-index: 9999;
   border-left: 4px solid #2ecc71;
+  will-change: transform, opacity;
 }
 
 .toast-custom.show {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== CART PAGE ===== */

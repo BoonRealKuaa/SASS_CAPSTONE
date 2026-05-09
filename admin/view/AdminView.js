@@ -167,10 +167,10 @@ const AdminView = (() => {
   function _previewImg(filename) {
     const wrap = document.getElementById("img-preview-wrap");
     const preview = document.getElementById("img-preview");
-    if (!filename) { wrap.style.display = "none"; return; }
+    if (!filename) { wrap.classList.add("d-none"); return; }
     const basePath = window.BASE_PATH || "";
     preview.src = basePath + "asset/img/phones/" + filename;
-    wrap.style.display = "block";
+    wrap.classList.remove("d-none");
   }
 
   function bindImgPreview() {

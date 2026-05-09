@@ -1,10 +1,11 @@
 const ProductView = (() => {
-  function renderCard(product) {
+  function renderCard(product, index = 0) {
     const basePath = window.BASE_PATH || "";
     const detailUrl = `${basePath}customer/view/product-detail.html?id=${product.id}`;
     const imgSrc = basePath + product.img;
+    const delay = Math.min(index * 70, 560);
     return `
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-6 col-md-4 col-lg-3 reveal" style="transition-delay:${delay}ms">
         <div class="product-card h-100">
           <a href="${detailUrl}" class="product-card-link" title="Xem chi tiết ${product.name}">
             <div class="product-card-img">

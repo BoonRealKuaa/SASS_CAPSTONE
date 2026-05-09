@@ -24,7 +24,8 @@ const ProductController = (() => {
       return;
     }
 
-    container.innerHTML = products.map((p) => ProductView.renderCard(p)).join("");
+    container.innerHTML = products.map((p, i) => ProductView.renderCard(p, i)).join("");
+    if (typeof Animations !== "undefined") Animations.observe();
   }
 
   const TYPE_ICONS = {
@@ -92,13 +93,16 @@ const ProductController = (() => {
         CartService.addToCart(product);
         refreshOffcanvas();
         showToast(`Đã thêm "${product.name}" vào giỏ hàng`);
+        if (typeof Animations !== "undefined") Animations.flashButton(btn);
       }
     });
   }
 
   function updateCartBadge() {
     const badge = document.getElementById("cart-badge");
-    if (badge) badge.textContent = CartService.getTotalItems();
+    if (!badge) return;
+    badge.textContent = CartService.getTotalItems();
+    if (typeof Animations !== "undefined") Animations.popBadge("cart-badge");
   }
 
   function refreshOffcanvas() {
